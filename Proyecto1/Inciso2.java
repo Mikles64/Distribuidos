@@ -14,13 +14,26 @@ public class Inciso2{
 		System.out.printf("Ingrese el valor de 'd': ");
 		int D = input.nextInt();
 
-		float resultado = (A * C) / (B * D);
+		float resultado = (float) (A * C) / (B * D);
 		int num = A * C;
 		int den = B * D;
+		int mcd = mcd(num, den);
+		num = num / mcd;
+		den = den / mcd;
 
 		System.out.println("El resultado en decimal es: " + resultado);
 		System.out.println("El resultado en fracción es: " + num + "/" + den);
 
 		input.close();
 	}
+
+	// Calculamos el máximo común divisor
+    public static int mcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return Math.abs(a);
+    }
 }
