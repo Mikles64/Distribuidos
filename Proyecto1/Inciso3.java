@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Inciso3 {
+public class Inciso3{
     public static void main(String[] args) {
         System.out.println("Calcular el radio de la circunferencia inscrita en un triángulo");
         Scanner input = new Scanner(System.in);
