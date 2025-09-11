@@ -12,8 +12,8 @@ public class Rectangulo {
     }
 
     public Rectangulo(Coordenada supIzq, Coordenada infDer){
-        superiorIzq = supIzq;
-        inferiorDer = infDer;
+        this.superiorIzq = new Coordenada(supIzq.abcisa(), supIzq.ordenada());
+        this.inferiorDer = new Coordenada(infDer.abcisa(), infDer.ordenada());
     }
     
     //Metodo getter de la coordenada superior izquierda
