@@ -12,7 +12,7 @@ public abstract class Figura implements Desplazable {
     }
 
     public Coordenada[] getVertices() {
-        return vertices;
+        return vertices;    
     }
 
     public abstract double area();
