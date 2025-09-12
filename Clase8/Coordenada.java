@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Coordenada {
     private double x, y;
 
@@ -16,6 +18,7 @@ public class Coordenada {
 
     @Override
     public String toString() {
-        return "[" + x + "," + y + "]";
+        DecimalFormat df = new DecimalFormat("#.###");
+        return "[" + df.format(x) + "," + df.format(y) + "]";
     }
 }
