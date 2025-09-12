@@ -27,12 +27,9 @@ public class PoligonoIrreg {
         vertices.add(vex);
     }
 
-    public double magnitud(Coordenada vertice){
-        return Math.sqrt(Math.pow(vertice.abcisa(), 2) + Math.pow(vertice.ordenada(), 2));
-    }
-
-    public void ordenaVertices(List<Coordenada> vts){
-        
+    public void ordenaVertices(){
+        Comparator comp = new ordenaCoordenadas();
+        Collections.sort(vertices, comp);
     }
 
     @Override
@@ -42,5 +39,20 @@ public class PoligonoIrreg {
             sb.append(i + 1).append(": ").append(vertices.get(i)).append("\n");
         }
         return sb.toString();
+    }
+}
+
+class ordenaCoordenadas implements Comparator{
+    @Override
+    public int compare(Object o1, Object o2){
+        Coordenada c1 = (Coordenada) o1;
+        Coordenada c2 = (Coordenada) o2;
+        if(c1.magnitud(c1.abcisa(), c1.ordenada()) < c2.magnitud(c2.abcisa(), c2.ordenada())){
+            return -1;
+        } else if(c1.magnitud(c1.abcisa(), c1.ordenada()) > c2.magnitud(c2.abcisa(), c2.ordenada())){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

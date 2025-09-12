@@ -16,9 +16,13 @@ public class Coordenada {
     public void setX(double x) { this.x = x; }
     public void setY(double y) { this.y = y; }
 
+    public double magnitud(double x, double y){
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+    }
+
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.###");
-        return "[" + df.format(x) + "," + df.format(y) + "]";
+        return "[" + df.format(x) + "," + df.format(y) + "]\tMagnitud: " + df.format(magnitud(x, y));
     }
 }
