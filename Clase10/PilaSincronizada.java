@@ -15,7 +15,7 @@ public class PilaSincronizada {
 
     public synchronized void push(char c) throws InterruptedException {
         while (tope >= capacidad - 1) {
-            wait(); // Esperar si la pila está llena
+            wait(); // Esperar si la pila esta llena
         }
         tope++;
         pila[tope] = c;
@@ -24,7 +24,7 @@ public class PilaSincronizada {
 
     public synchronized char pop() throws InterruptedException {
         while (tope < 0) {
-            wait(); // Esperar si la pila está vacía
+            wait(); // Esperar si la pila esta vacia
         }
         char c = pila[tope];
         tope--;
@@ -85,7 +85,7 @@ public class PilaSincronizada {
                         pila.wait(); // Esperar a que haya un cambio
                     }
                     
-                    // Limpiar pantalla (funciona en la mayoría de terminales)
+                    // Limpiar pantalla 
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
                     
