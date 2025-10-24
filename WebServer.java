@@ -262,8 +262,8 @@ public class WebServer {
                 posicion = cadenaCompleta.indexOf(subcadenaBuscar, posicion + 1);
             }
  
-            String resultado = String.format("Tokens generados: %d\nSubcadena buscada: %s\nNumero de veces encontrada: %d\n%s",
-                                            numeroTokens, subcadenaBuscar, contador, posiciones.toString());
+            String resultado = String.format("Tokens generados: %d\nSubcadena buscada: %s\nNumero de veces encontrada: %d",
+                                            numeroTokens, subcadenaBuscar, contador);
             
             return resultado.getBytes();
         } catch (NumberFormatException e) {
