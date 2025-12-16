@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Factorial Distribuido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Factorial Distribuido</h1>
+            <p class="subtitle">Usando múltiples servidores de procesamiento</p>
+        </header>
+        
+        <main>
+            <div class="calculator">
+                <div class="input-section">
+                    <label for="numberInput">Ingrese un número para calcular su factorial:</label>
+                    <input type="text" id="numberInput" 
+                           placeholder="Ejemplo: 100, 500, 1000..." 
+                           pattern="\d+"
+                           title="Por favor ingrese solo números enteros positivos">
+                    <button id="calculateBtn">Calcular Factorial</button>
+                    <button id="clearBtn">Limpiar</button>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Resultado:</h3>
+                    <div id="resultContainer" class="result-container">
+                        <p id="resultText">El resultado aparecerá aquí...</p>
+                        <div id="loading" class="loading hidden">
+                            <div class="spinner"></div>
+                            <p>Calculando factorial...</p>
+                            <p class="status" id="statusText"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Información del Sistema:</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Servidor Despachador</h4>
+                            <p>Puerto: 8080</p>
+                            <p id="dispatcherStatus" class="status-offline">Sin conexión</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Servidores de Procesamiento</h4>
+                            <ul id="processorList">
+                                <li>Puerto 8081: <span class="status-offline">Sin conexión</span></li>
+                                <li>Puerto 8082: <span class="status-offline">Sin conexión</span></li>
+                                <li>Puerto 8083: <span class="status-offline">Sin conexión</span></li>
+                                <li>Puerto 8084: <span class="status-offline">Sin conexión</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="examples">
+                <h3>Ejemplos para probar:</h3>
+                <div class="example-buttons">
+                    <button class="example-btn" data-number="50">50!</button>
+                    <button class="example-btn" data-number="100">100!</button>
+                    <button class="example-btn" data-number="200">200!</button>
+                    <button class="example-btn" data-number="500">500!</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Práctica: Servidor Despachador - Sistemas Distribuidos</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
